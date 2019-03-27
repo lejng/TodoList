@@ -9,18 +9,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import com.example.todolist.R
+import com.example.todolist.activity.NoteInfoActivity
 import com.example.todolist.utils.Constants
 
 class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
 
     private var notes: List<Note>
     private var inflater: LayoutInflater
-    private var intent: Intent
 
-    constructor(context: Context, notes: List<Note>, intent: Intent) {
+    constructor(context: Context, notes: List<Note>) {
         this.notes = notes
         this.inflater = LayoutInflater.from(context)
-        this.intent = intent
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -33,6 +32,7 @@ class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
         var note = notes[position]
         holder.fillFields(note)
         holder.titleView.setOnClickListener{
+            var intent = Intent(inflater.context, NoteInfoActivity::class.java)
             intent.putExtra(Constants.NOTE_KEY_FOR_NOTE_INFO_ACTIVITY, note)
             inflater.context.startActivity(intent)
         }
