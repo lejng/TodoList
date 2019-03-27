@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="title_text_for_activity_add_note">Title</string>
+    <string name="description_text_for_activity_add_note">Description</string>
+    <string name="add_btn_name_for_activity_add_note">Add</string>
+    <string name="back_btn_name_for_activity_note_info">Back</string>
+    <string name="add_btn_name_for_activity_notes_list">Add</string>
+</resources>
