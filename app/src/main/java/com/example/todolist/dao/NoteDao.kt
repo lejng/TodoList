@@ -1,7 +1,7 @@
 package com.example.todolist.dao
 
 import android.arch.persistence.room.*
-import com.example.todolist.models.Note
+import com.example.todolist.model.Note
 
 @Dao
 interface NoteDao {

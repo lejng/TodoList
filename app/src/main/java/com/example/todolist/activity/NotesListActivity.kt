@@ -1,4 +1,4 @@
-package com.example.todolist.activities
+package com.example.todolist.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.widget.Button
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
-import com.example.todolist.views.ListNotesAdapter
+import com.example.todolist.adapter.ListNotesAdapter
 
 class NotesListActivity : AppCompatActivity() {
     private lateinit var listNotesRecycle: RecyclerView

@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import com.example.todolist.dao.NoteDao
-import com.example.todolist.models.Note
+import com.example.todolist.model.Note
 
 @Database(entities = [Note::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {

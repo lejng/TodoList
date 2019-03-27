@@ -1,4 +1,4 @@
-package com.example.todolist.activities
+package com.example.todolist.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
-import com.example.todolist.models.Note
+import com.example.todolist.model.Note
 
 class AddNoteActivity : AppCompatActivity() {
     private lateinit var titleInput: EditText

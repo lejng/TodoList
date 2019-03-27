@@ -1,4 +1,4 @@
-package com.example.todolist.activities
+package com.example.todolist.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
 import com.example.todolist.R
-import com.example.todolist.enums.ExtraNames
-import com.example.todolist.models.Note
+import com.example.todolist.utils.Constants
+import com.example.todolist.model.Note
 
 class NoteInfoActivity : AppCompatActivity() {
     private lateinit var titleText: TextView
@@ -18,7 +18,7 @@ class NoteInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note_info)
         initElements()
-        var note = intent.getSerializableExtra(ExtraNames.NOTE.Name) as Note
+        var note = intent.getSerializableExtra(Constants.NOTE_KEY_FOR_NOTE_INFO_ACTIVITY) as Note
         fillFields(note)
     }
 
