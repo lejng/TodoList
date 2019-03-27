@@ -9,7 +9,7 @@ import java.io.Serializable
 data class Note (
     @PrimaryKey(autoGenerate = true) val Id: Int?,
     @ColumnInfo(name = "title") val Title: String,
-    @ColumnInfo(name = "description") val Description: String//,
-   // @ColumnInfo(name = "date_of_created") val DateOfCreated: Date,
-   // @ColumnInfo(name = "date_of_last_editing") val DateOfLastEditing: Date
+    @ColumnInfo(name = "description") val Description: String,
+    @ColumnInfo(name = "createdTimestamp") val CreatedTimestamp: Long,
+    @ColumnInfo(name = "lastModifyTimestamp") val LastModifyTimestamp: Long
 ): Serializable

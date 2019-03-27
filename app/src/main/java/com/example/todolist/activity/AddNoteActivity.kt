@@ -8,6 +8,7 @@ import android.widget.EditText
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
 import com.example.todolist.model.Note
+import java.util.*
 
 class AddNoteActivity : AppCompatActivity() {
     private lateinit var titleInput: EditText
@@ -38,9 +39,9 @@ class AddNoteActivity : AppCompatActivity() {
         return Note(
             Id = null,
             Title = titleInput.text.toString(),
-            Description = descriptionInput.text.toString()//,
-            //DateOfCreated = Date(),
-            //DateOfLastEditing = Date()
+            Description = descriptionInput.text.toString(),
+            CreatedTimestamp = Date().time,
+            LastModifyTimestamp = Date().time
         )
     }
 }

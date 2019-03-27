@@ -27,7 +27,8 @@ class NotesListActivity : AppCompatActivity() {
     }
 
     private fun setListNotesRecycleAdapter(){
-        var intentForStartNoteInfoActivity = Intent(this, NoteInfoActivity::class.java)
-        listNotesRecycle.adapter = ListNotesAdapter(this, AppDatabase.getInstance(applicationContext)?.getNoteDao()?.getAllNotes()!!, intentForStartNoteInfoActivity)
+        val intentForStartNoteInfoActivity = Intent(this, NoteInfoActivity::class.java)
+        val allNotes = AppDatabase.getInstance(applicationContext)?.getNoteDao()?.getAllNotes()!!
+        listNotesRecycle.adapter = ListNotesAdapter(this, allNotes, intentForStartNoteInfoActivity)
     }
 }
