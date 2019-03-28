@@ -1,6 +1,5 @@
 package com.example.todolist.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
@@ -8,6 +7,7 @@ import android.widget.TextView
 import com.example.todolist.R
 import com.example.todolist.utils.Constants
 import com.example.todolist.model.Note
+import com.example.todolist.utils.Navigator
 
 class NoteInfoActivity : AppCompatActivity() {
     private lateinit var titleText: TextView
@@ -26,7 +26,7 @@ class NoteInfoActivity : AppCompatActivity() {
         titleText = findViewById(R.id.titleTextView)
         descriptionText = findViewById(R.id.descriptionTextView)
         backButton = findViewById(R.id.backButton)
-        backButton.setOnClickListener{startActivity(Intent(this, NotesListActivity::class.java))}
+        backButton.setOnClickListener{Navigator.startNotesListActivity(this)}
     }
 
     private fun fillFields(note: Note){

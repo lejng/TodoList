@@ -3,14 +3,12 @@ package com.example.todolist.adapter
 import android.support.v7.widget.RecyclerView
 import com.example.todolist.model.Note
 import android.content.Context
-import android.content.Intent
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import com.example.todolist.R
-import com.example.todolist.activity.NoteInfoActivity
-import com.example.todolist.utils.Constants
+import com.example.todolist.utils.Navigator
 
 class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
 
@@ -31,11 +29,7 @@ class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         var note = notes[position]
         holder.fillFields(note)
-        holder.titleView.setOnClickListener{
-            var intent = Intent(inflater.context, NoteInfoActivity::class.java)
-            intent.putExtra(Constants.NOTE_KEY_FOR_NOTE_INFO_ACTIVITY, note)
-            inflater.context.startActivity(intent)
-        }
+        holder.titleView.setOnClickListener{ Navigator.startNoteInfoActivity(inflater.context, note) }
     }
 
     override fun getItemCount(): Int {

@@ -24,5 +24,9 @@ abstract class AppDatabase : RoomDatabase() {
             }
             return Instance
         }
+
+        fun getNoteDao(context: Context): NoteDao?{
+            return getInstance(context)?.getNoteDao()
+        }
     }
 }

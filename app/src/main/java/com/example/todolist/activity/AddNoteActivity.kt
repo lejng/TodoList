@@ -1,6 +1,5 @@
 package com.example.todolist.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
@@ -8,6 +7,7 @@ import android.widget.EditText
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
 import com.example.todolist.model.Note
+import com.example.todolist.utils.Navigator
 import java.util.*
 
 class AddNoteActivity : AppCompatActivity() {
@@ -30,8 +30,8 @@ class AddNoteActivity : AppCompatActivity() {
 
     private fun setClickListenerForAddButton(){
         addButton.setOnClickListener {
-            AppDatabase.getInstance(applicationContext)?.getNoteDao()?.insertNotes(getNoteFromActivity())
-            startActivity(Intent(this, NotesListActivity::class.java))
+            AppDatabase.getNoteDao(applicationContext)?.insertNotes(getNoteFromActivity())
+            Navigator.startNotesListActivity(this)
         }
     }
 
