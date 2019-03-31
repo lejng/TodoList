@@ -26,7 +26,7 @@ class NoteInfoActivity : AppCompatActivity() {
         titleText = findViewById(R.id.titleTextView)
         descriptionText = findViewById(R.id.descriptionTextView)
         backButton = findViewById(R.id.backButton)
-        backButton.setOnClickListener{Navigator.startNotesListActivity(this)}
+        backButton.setOnClickListener{Navigator.getInstance()?.startNotesListActivity(this)}
     }
 
     private fun fillFields(note: Note){

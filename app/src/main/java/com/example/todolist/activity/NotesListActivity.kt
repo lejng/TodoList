@@ -23,11 +23,11 @@ class NotesListActivity : AppCompatActivity() {
         listNotesRecycle = findViewById(R.id.listNotes)
         addNewNoteButton = findViewById(R.id.addNoteButton)
         setListNotesRecycleAdapter()
-        addNewNoteButton.setOnClickListener {Navigator.startAddNoteActivity(this)}
+        addNewNoteButton.setOnClickListener {Navigator.getInstance()?.startAddNoteActivity(this)}
     }
 
     private fun setListNotesRecycleAdapter(){
         val allNotes = AppDatabase.getNoteDao(applicationContext)?.getAllNotes()!!
-        listNotesRecycle.adapter = ListNotesAdapter(this, allNotes)
+        listNotesRecycle.adapter = ListNotesAdapter(this, allNotes) { note -> Navigator.getInstance()?.startNoteInfoActivity(this, note)}
     }
 }

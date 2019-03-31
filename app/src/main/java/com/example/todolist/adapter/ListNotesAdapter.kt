@@ -8,16 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import com.example.todolist.R
-import com.example.todolist.utils.Navigator
 
 class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
 
     private var notes: List<Note>
     private var inflater: LayoutInflater
+    private var listener: (Note) -> Unit
 
-    constructor(context: Context, notes: List<Note>) {
+    constructor(context: Context, notes: List<Note>, listener: (Note) -> Unit) {
         this.notes = notes
         this.inflater = LayoutInflater.from(context)
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -29,7 +30,7 @@ class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         var note = notes[position]
         holder.fillFields(note)
-        holder.titleView.setOnClickListener{ Navigator.startNoteInfoActivity(inflater.context, note) }
+        holder.titleView.setOnClickListener{ listener (note) }
     }
 
     override fun getItemCount(): Int {

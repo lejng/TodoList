@@ -11,23 +11,34 @@ import kotlin.reflect.KClass
 
 class Navigator {
     companion object {
-        fun startNoteInfoActivity(context: Context, note: Note){
-            var intent = Intent(context, NoteInfoActivity::class.java)
-            intent.putExtra(Constants.NOTE_KEY_FOR_NOTE_INFO_ACTIVITY, note)
-            context.startActivity(intent)
-        }
+        private var Instance : Navigator ? = null
 
-        fun startNotesListActivity(context: Context){
-            startSimpleActivity(context, NotesListActivity::class)
+        fun getInstance(): Navigator?{
+            if(Instance == null){
+                synchronized(Navigator::class) {
+                    Instance = Navigator()
+                }
+            }
+            return Instance
         }
+    }
 
-        fun startAddNoteActivity(context: Context){
-            startSimpleActivity(context, AddNoteActivity::class)
-        }
+    fun startNoteInfoActivity(context: Context, note: Note){
+        var intent = Intent(context, NoteInfoActivity::class.java)
+        intent.putExtra(Constants.NOTE_KEY_FOR_NOTE_INFO_ACTIVITY, note)
+        context.startActivity(intent)
+    }
 
-        private fun <T : AppCompatActivity> startSimpleActivity(context: Context, cls: KClass<T>){
-            var intent = Intent(context, cls.java)
-            context.startActivity(intent)
-        }
+    fun startNotesListActivity(context: Context){
+        startSimpleActivity(context, NotesListActivity::class)
+    }
+
+    fun startAddNoteActivity(context: Context){
+        startSimpleActivity(context, AddNoteActivity::class)
+    }
+
+    private fun <T : AppCompatActivity> startSimpleActivity(context: Context, cls: KClass<T>){
+        var intent = Intent(context, cls.java)
+        context.startActivity(intent)
     }
 }

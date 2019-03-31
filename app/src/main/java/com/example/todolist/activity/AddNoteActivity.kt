@@ -31,7 +31,7 @@ class AddNoteActivity : AppCompatActivity() {
     private fun setClickListenerForAddButton(){
         addButton.setOnClickListener {
             AppDatabase.getNoteDao(applicationContext)?.insertNotes(getNoteFromActivity())
-            Navigator.startNotesListActivity(this)
+            Navigator.getInstance()?.startNotesListActivity(this)
         }
     }
 
