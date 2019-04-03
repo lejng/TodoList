@@ -3,13 +3,14 @@ package com.example.todolist.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
 import com.example.todolist.adapter.ListNotesAdapter
 import com.example.todolist.utils.Navigator
 
 class NotesListActivity : AppCompatActivity() {
-    private lateinit var listNotesRecycle: androidx.recyclerview.widget.RecyclerView
+    private lateinit var listNotesRecycle: RecyclerView
     private lateinit var addNewNoteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
