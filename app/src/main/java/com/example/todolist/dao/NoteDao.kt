@@ -1,6 +1,6 @@
 package com.example.todolist.dao
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.example.todolist.model.Note
 
 @Dao

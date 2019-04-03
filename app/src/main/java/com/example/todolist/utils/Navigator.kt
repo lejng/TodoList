@@ -2,7 +2,7 @@ package com.example.todolist.utils
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.todolist.activity.AddNoteActivity
 import com.example.todolist.activity.NoteInfoActivity
 import com.example.todolist.activity.NotesListActivity

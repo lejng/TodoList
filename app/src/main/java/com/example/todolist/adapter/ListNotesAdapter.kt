@@ -1,6 +1,5 @@
 package com.example.todolist.adapter
 
-import android.support.v7.widget.RecyclerView
 import com.example.todolist.model.Note
 import android.content.Context
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import android.view.View
 import android.widget.TextView
 import com.example.todolist.R
 
-class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
+class ListNotesAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
 
     private var notes: List<Note>
     private var inflater: LayoutInflater
@@ -37,7 +36,7 @@ class ListNotesAdapter : RecyclerView.Adapter<ListNotesAdapter.NoteViewHolder> {
         return notes.size
     }
 
-    class NoteViewHolder : RecyclerView.ViewHolder {
+    class NoteViewHolder : androidx.recyclerview.widget.RecyclerView.ViewHolder {
         val titleView: TextView
 
         constructor(itemView: View): super(itemView){

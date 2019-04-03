@@ -1,8 +1,7 @@
 package com.example.todolist.activity
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.RecyclerView
 import android.widget.Button
 import com.example.todolist.R
 import com.example.todolist.database.AppDatabase
@@ -10,7 +9,7 @@ import com.example.todolist.adapter.ListNotesAdapter
 import com.example.todolist.utils.Navigator
 
 class NotesListActivity : AppCompatActivity() {
-    private lateinit var listNotesRecycle: RecyclerView
+    private lateinit var listNotesRecycle: androidx.recyclerview.widget.RecyclerView
     private lateinit var addNewNoteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
